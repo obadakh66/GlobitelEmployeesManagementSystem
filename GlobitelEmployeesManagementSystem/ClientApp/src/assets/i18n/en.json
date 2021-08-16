@@ -1,0 +1,45 @@
+{
+  "Auth": {
+    "login": "Login",
+    "lang": "عربي",
+    "logout":"Logout"
+  },
+  "Global":{
+    "username":"Username",
+    "password":"Password",
+    "email":"Email",
+    "fullNameEn":"Full Name English",
+    "fullNameAr":"Full Name Arabic",
+    "positionEn":"Position English",
+    "positionAr":"Position Arabic",
+    "age":"Age",
+    "mobileNumber":"Mobile Number",
+    "actions":"Actions",
+    "status":"Status",
+    "active":"Active",
+    "notActive":"Not Active",
+    "searchByText":"Search By Text",
+    "requiredError":"This Field Is Required",
+    "dateOfBirth":"Date Of Birth",
+    "dateOfEmployement":"Date Of Employement",
+    "gender":"Gender",
+    "submit":"Submit",
+    "back":"Back",
+    "saveChanges":"Save Changes",
+    "male":"Male",
+    "female":"Female",
+    "statisticalReports":"Statistical Reports",
+    "welcomeBack":"Welcome Back",
+    "ageRangeReport":"Age Range Report",
+    "genderRangeReport":"Gender Range Report"
+
+  },
+  "EmployeesList":{
+    "EmployeesListText":"Employees List",
+    "CreateNew":"Create New",
+    "ExportToExcel":"Export Active Employees To Excel",
+    "CreateNewEmployee":"Create New Employee",
+    "UpdateEmployee":"Update Employee",
+    "EmployeesManagement":"Employees Management"
+  }
+}

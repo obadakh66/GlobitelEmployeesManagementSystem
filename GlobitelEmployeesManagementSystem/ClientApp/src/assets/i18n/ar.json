@@ -1,0 +1,45 @@
+{
+  "Auth": {
+    "login": "تسجيل الدخول",
+    "lang": "عربي",
+    "logout":"تسجيل الخروج"
+  },
+  "Global":{
+    "username":"اسم المستخدم",
+    "password":"كلمة المرور",
+    "email":"البريد الالكتروني",
+    "fullNameEn":"الاسم باللغة الانجليزية",
+    "fullNameAr":"الاسم باللغة العربية",
+    "positionEn":"الرتبة باللغة الانجليزية ",
+    "positionAr":"الرتبة باللغة العربية",
+    "age":"العمر",
+    "mobileNumber":"رقم الهاتف",
+    "actions":"افعال",
+    "status":"الحالة",
+    "active":"نشط",
+    "notActive":"غير نشط",
+    "searchByText":"ابحث باستخدام نصوص",
+    "requiredError":"هذا الحقل اجباري",
+    "dateOfBirth":"تاريخ الميلاد",
+    "dateOfEmployement":"تاريخ التعيين",
+    "gender":"الجنس",
+    "submit":"ارسال",
+    "back":"عودة",
+    "saveChanges":"حفظ التغييرات",
+    "male":"ذكر",
+    "female":"انثى",
+    "statisticalReports":"تقارير احصائية",
+    "welcomeBack":"اهلا بك ",
+    "ageRangeReport":"تقرير معدل الاعمار",
+    "genderRangeReport":"تقرير معدل الجنس"
+
+  },
+  "EmployeesList":{
+    "EmployeesListText":"قائمة الموظفين",
+    "CreateNew":"أضافة جديدة",
+    "ExportToExcel":"استخراج الموظفين النشطين الى Excel",
+    "CreateNewEmployee":"اضافة موظف جديد",
+    "UpdateEmployee":"تعديل بيانات الموظف",
+    "EmployeesManagement":"ادارة الموظفين"
+  }
+}

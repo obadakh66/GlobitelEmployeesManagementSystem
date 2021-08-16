@@ -1,0 +1,135 @@
+<mat-card class="animated-globitel">
+  <mat-card-header>
+    <mat-card-title *ngIf="!isUpdateMode">
+      {{'EmployeesList.CreateNewEmployee' | translate}}
+    </mat-card-title>
+    <mat-card-title *ngIf="isUpdateMode">
+      {{'EmployeesList.UpdateEmployee' | translate}}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div [formGroup]="employeeForm">
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" class="full-width-control">
+            <mat-label>{{'Global.fullNameEn' | translate}}</mat-label>
+            <input matInput formControlName="fullNameEN" placeholder="{{'Global.fullNameEn' | translate}}" />
+            <mat-error *ngIf="getControlByName('fullNameEN').touched && getControlByName('fullNameEN').invalid">
+              {{'Global.requiredError' | translate}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" class="full-width-control">
+            <mat-label>{{'Global.fullNameAr' | translate}}</mat-label>
+            <input matInput formControlName="fullNameAR" placeholder="{{'Global.fullNameAr' | translate}}" />
+            <mat-error *ngIf="getControlByName('fullNameAR').touched && getControlByName('fullNameAR').invalid">
+              {{'Global.requiredError' | translate}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" class="full-width-control">
+            <mat-label>{{'Global.positionEn' | translate}}</mat-label>
+            <input matInput formControlName="positionEN" placeholder="{{'Global.positionEn' | translate}}" />
+            <mat-error *ngIf="getControlByName('positionEN').touched && getControlByName('positionEN').invalid">
+              {{'Global.requiredError' | translate}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" class="full-width-control">
+            <mat-label>{{'Global.positionAr' | translate}}</mat-label>
+            <input matInput formControlName="positionAR" placeholder="{{'Global.positionAr' | translate}}" />
+            <mat-error *ngIf="getControlByName('positionAR').touched && getControlByName('positionAR').invalid">
+              {{'Global.requiredError' | translate}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" class="full-width-control">
+            <mat-label>{{'Global.dateOfBirth' | translate}}</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dateOfBirth"
+              placeholder="{{'Global.dateOfBirth' | translate}}">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="getControlByName('dateOfBirth').touched && getControlByName('dateOfBirth').invalid">
+              {{'Global.requiredError' | translate}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" class="full-width-control">
+            <mat-label>{{'Global.dateOfEmployement' | translate}}</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="dateOfEmployement"
+              placeholder="{{'Global.dateOfEmployement' | translate}}">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+            <mat-error
+              *ngIf="getControlByName('dateOfEmployement').touched && getControlByName('dateOfEmployement').invalid">
+              {{'Global.requiredError' | translate}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" class="full-width-control">
+            <mat-label>{{'Global.mobileNumber' | translate}}</mat-label>
+            <input matInput formControlName="mobileNumber" placeholder="{{'Global.mobileNumber' | translate}}" />
+            <mat-error *ngIf="getControlByName('mobileNumber').touched && getControlByName('mobileNumber').invalid">
+              {{'Global.requiredError' | translate}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" class="full-width-control">
+            <mat-label>{{'Global.gender' | translate}}</mat-label>
+            <mat-select formControlName="gender">
+              <mat-option [value]="1">
+                {{'Global.male' | translate}}
+              </mat-option>
+              <mat-option [value]="2">
+                {{'Global.female' | translate}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="getControlByName('gender').touched && getControlByName('gender').invalid">
+              {{'Global.requiredError' | translate}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" class="full-width-control">
+            <mat-label>{{'Global.email' | translate}}</mat-label>
+            <input matInput formControlName="email" placeholder="{{'Global.email' | translate}}" />
+            <mat-error *ngIf="getControlByName('email').touched && getControlByName('email').invalid">
+              {{'Global.requiredError' | translate}}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-12">
+          <button *ngIf="!isUpdateMode" mat-raised-button color="primary" style="margin-left:3px; margin-right:3px"
+            (click)="submitForm()">{{'Global.submit' | translate}}</button>
+          <button *ngIf="isUpdateMode" mat-raised-button color="primary" style="margin-left:3px; margin-right:3px"
+            (click)="submitEditForm()">{{'Global.saveChanges' | translate}}</button>
+          <button mat-raised-button color="primary" style="margin-left:3px; margin-right:3px"
+            [routerLink]="['/']">{{'Global.back' | translate}}</button>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

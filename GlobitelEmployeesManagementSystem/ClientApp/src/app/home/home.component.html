@@ -1,0 +1,58 @@
+<div class="container animated-globitel">
+  <mat-card class="col-md-12 radius-25">
+    <div class="example-header">
+      <div class="row" style="margin-bottom:0px; margin:10px; padding-top:20px">
+        <div class="col-md-10">
+
+        </div>
+        <div class="col-md-12" *ngIf="userRole == 'Employee'">
+          <h3>
+            {{'Global.welcomeBack' | translate}} <b>{{' '+userName}}</b>
+          </h3>
+        </div>
+        <div class="col-md-6" *ngIf="userRole == 'Admin'">
+          <h3>
+            {{'Global.statisticalReports' | translate}}
+          </h3>
+        </div>
+        <div class="col-md-2" *ngIf="userRole == 'Admin'">
+          <button [routerLink]="['/employees-list']" mat-raised-button color="primary">
+            {{'EmployeesList.EmployeesManagement' | translate}}
+          </button>
+        </div>
+      </div>
+      <hr/>
+      <div class="row w-100" *ngIf="userRole==='Admin' && dashboardData">
+        <div class="row text-center w-100">
+          <h3 class="w-100">{{'Global.ageRangeReport' | translate}}</h3>
+        </div>
+        <div class="row w-100">
+          <div class="col-md-12">
+            <div style="display: block">
+              <canvas baseChart [datasets]="ageChartData" [labels]="['Global.ageRangeReport' | translate]" [options]="barChartOptions"
+              [colors]="barChartColors2"
+                [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="row w-100" *ngIf="userRole==='Admin' && dashboardData">
+        <div class="row text-center w-100">
+          <h3 class="w-100">{{'Global.genderRangeReport' | translate}}</h3>
+        </div>
+        <div class="row w-100">
+          <div class="col-md-12">
+            <div style="display: block">
+              <canvas baseChart [datasets]="genderChartData" [labels]="['Global.genderRangeReport' | translate]" [options]="barChartOptions"
+              [colors]="barChartColors2"
+                [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+  <br />
+
+</div>

@@ -1,0 +1,29 @@
+<mat-sidenav-container [dir]="dir" style="min-height:91.7%">
+
+
+
+  <mat-sidenav-content style="min-height:91.7%">
+    <mat-toolbar color="primary" style="background-color: #f48220;color: white;">
+      <span class="example-spacer"></span>
+      <button mat-button (click)="logout()" *ngIf="authorizeService.isAuthenticated()">
+        <mat-icon>login</mat-icon>
+        <span>{{'Auth.logout' | translate}}</span>
+      </button>
+      <button mat-button (click)="toggleLanguage()" aria-label="Example icon-button with a menu">
+        <mat-icon>language</mat-icon> {{translate.currentLang=='en'?"عربي":"English"}}
+      </button>
+    </mat-toolbar>
+    <div class="sidenav-content">
+      <div class="container" style="padding-top: 5%;">
+
+        <router-outlet></router-outlet>
+        <br />
+      </div>
+    </div>
+    <ngx-spinner bdColor="rgba(235,140,0,255)" size="medium" color="#fff" type="ball-square-spin" [fullScreen]="true">
+    </ngx-spinner>
+    <simple-notifications [dir]="translate.currentLang == 'EN' ? 'ltr' : 'rtl'"></simple-notifications>
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>

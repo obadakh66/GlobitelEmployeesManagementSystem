@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: "Tajawal", sans-serif;
+  src: url("./assets/fonts/Montserrat-Medium.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Tajawal", sans-serif !important;
+  font-weight: 500;
+}
+h1,
+p,
+h3,
+h4,
+label,
+input,
+td,
+th,
+tr,
+button,
+span {
+  font-family: "Tajawal", sans-serif !important;
+  font-weight: 300;
+}
+h3{
+  color: #00000093 !important;
+}
+/* @font-face {
+  font-family: "Tajawal", sans-serif;
+  src: url("assets/fonts/Gilroy-ExtraBold.otf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+} */
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #eb8c00;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+.full-width-control {
+  width: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-card-header-text {
+  width: inherit !important;
+}
+.radius-25 {
+  border-radius: 25px !important;
+}
+
+.animated-globitel {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  overflow: hidden !important;
+}
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}

@@ -1,0 +1,98 @@
+<div class="container animated-globitel">
+  <mat-card class="col-md-12 radius-25">
+    <mat-progress-bar mode="query" *ngIf="isLoading"></mat-progress-bar>
+    <div class="example-header">
+      <div class="row" style="margin-bottom:0px; margin:10px; padding-top:20px">
+        <div class="col-md-6">
+          <h3>
+            {{'EmployeesList.EmployeesListText' | translate}}
+          </h3>
+        </div>
+        <div class="col-md-2">
+          <button [routerLink]="['/add-edit-employee']" mat-raised-button color="primary">
+            {{'EmployeesList.CreateNew' | translate}}
+          </button>
+        </div>
+        <div class="col-md-2">
+          <button (click)="exportToExcel()" mat-raised-button color="primary">
+            {{'EmployeesList.ExportToExcel' | translate}}
+          </button>
+        </div>
+      </div>
+      <div class="row w-100">
+        <form [formGroup]="filterForm" class="w-100">
+          <div class="col-12">
+            <mat-form-field appearance="outline" class="full-width-control w-100">
+              <mat-label> {{'Global.searchByText' | translate}}</mat-label>
+              <input matInput (keyup)="applyFilter($event)" formControlName="searchValue"
+                placeholder="{{'Global.searchByText' | translate}}" />
+            </mat-form-field>
+          </div>
+        </form>
+      </div>
+    </div>
+  </mat-card>
+  <br />
+  <div class="col-12">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 radius-25">
+      <ng-container matColumnDef="fullNameEn">
+        <th mat-header-cell *matHeaderCellDef> {{'Global.fullNameEn' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.fullNameEN}} </td>
+      </ng-container>
+      <ng-container matColumnDef="fullNameAr">
+        <th mat-header-cell *matHeaderCellDef> {{'Global.fullNameAr' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.fullNameAR}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="positionEn">
+        <th mat-header-cell *matHeaderCellDef>
+          {{'Global.positionEn' | translate}}
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.positionEN}} </td>
+      </ng-container>
+      <ng-container matColumnDef="positionAr">
+        <th mat-header-cell *matHeaderCellDef>
+          {{'Global.positionAr' | translate}}
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.positionAR}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> {{'Global.age' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+      </ng-container>
+      <ng-container matColumnDef="mobileNumber">
+        <th mat-header-cell *matHeaderCellDef> {{'Global.mobileNumber' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.mobileNumber}} </td>
+      </ng-container>
+      <ng-container matColumnDef="isActive">
+        <th mat-header-cell *matHeaderCellDef> {{'Global.status' | translate}} </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-form-field>
+            <mat-select [(ngModel)]="element.isActive" placeholder="{{'Global.status' | translate}}"
+              (selectionChange)="changeEmployeeStatus($event.value, element.id)">
+              <mat-option [value]="true">{{'Global.active' | translate}}</mat-option>
+              <mat-option [value]="false">{{'Global.notActive' | translate}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> {{'Global.actions' | translate}} </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-mini-fab color="primary" (click)="editItem(element.id)" class="btn m-2">
+            <mat-icon>create</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+  <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+
+
+</div>
