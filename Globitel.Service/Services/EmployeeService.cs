@@ -167,8 +167,8 @@ namespace Globitel.Service.Services
         }
         public async Task<MemoryStream> ExportActiveEmployeesToExcel(Language language)
         {
-            List<ApplicationUser> activeEmployees = await _userManager.GetUsersInRoleAsync("Employee").Where(x => (bool)x.IsActive).ToListAsync();
-
+            IList<ApplicationUser> allEmployees = await _userManager.GetUsersInRoleAsync("Employee");
+            List<ApplicationUser> activeEmployees = allEmployees.Where(x => (bool)x.IsActive).ToList(); 
             var stream = new MemoryStream();
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
